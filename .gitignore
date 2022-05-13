@@ -1,3 +1,4 @@
 # ignore temrorary file
 
 tmp.py
+.DS_Store
