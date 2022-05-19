@@ -14,8 +14,6 @@ def get_recipe(file_name):
                 meals[name] = ingredients
             else:
                 break
-
-
     return meals
 
 def get_shop_list_by_dishes(dishes, person_count):
@@ -31,7 +29,6 @@ def get_shop_list_by_dishes(dishes, person_count):
     for ingredient, qty in shop_list.items():
         """Multiplying ingredients on persons qty planned"""
         qty['quantity'] = int(qty['quantity']) * int(person_count)
-
     return shop_list
 
 """Reading recipes"""
@@ -39,4 +36,3 @@ cook_book = get_recipe('recipes.txt')
 
 """Passing meals list and persons qty"""
 print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
-
