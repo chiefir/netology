@@ -40,9 +40,10 @@ class ShopList:
             qty['quantity'] = int(qty['quantity']) * int(guests_qty)
         return ingredients_list
 
+if __name__ == '__main__':
 
-dinner_cook_book = CookBook('dinner_cook_book', 'recipes.txt')
-dinner_shop_list = ShopList('dinner_shop_list', dinner_cook_book, ['Запеченный картофель', 'Омлет'], 2)
+    dinner_cook_book = CookBook('dinner_cook_book', 'recipes.txt')
+    dinner_shop_list = ShopList('dinner_shop_list', dinner_cook_book, ['Запеченный картофель', 'Омлет'], 2)
 
 
-print(dinner_shop_list.shop_list)
+    print(dinner_shop_list.shop_list)
