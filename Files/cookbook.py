@@ -1,5 +1,5 @@
 def get_recipe(file_name):
-    """Reads through the file and returns a dictionary with meal name keys and ingredients values"""
+    # Reads through the file and returns a dictionary with meal name keys and ingredients values
     with open(file_name, 'r') as f:
         meals = {}
         while True:
@@ -18,10 +18,10 @@ def get_recipe(file_name):
 
 def get_shop_list_by_dishes(dishes, person_count):
     shop_list = {}
-    """Iterating over cook_book searching for ingredients. If ingredient is not in the shop_list, add the position,
-    if ingredient already is in the shop_list, add extra qty"""
+    # Iterating over cook_book searching for ingredients. If ingredient is not in the shop_list, add the position,
+    # if ingredient already is in the shop_list, add extra qty
     for dish in dishes:
-        for ingredient in cook_book[dish]:
+        for ingredient in get_recipe('recipes.txt')[dish]:
             if ingredient['ingredient_name'] not in shop_list:
                 shop_list.setdefault(ingredient['ingredient_name'], {'measure': ingredient['measure'], 'quantity': ingredient['quantity']})
             else:
@@ -31,8 +31,9 @@ def get_shop_list_by_dishes(dishes, person_count):
         qty['quantity'] = int(qty['quantity']) * int(person_count)
     return shop_list
 
-"""Reading recipes"""
-cook_book = get_recipe('recipes.txt')
+# Reading recipes
 
-"""Passing meals list and persons qty"""
-print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
+# Passing meals list and persons qty
+print("TO BUY-->", get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
+
+# print(get_recipe('recipes.txt'))
