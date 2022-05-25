@@ -1,9 +1,12 @@
+import pathlib
+import os
+
 def main():
-    files_list = ['1.txt', '2.txt']
+    files_list = os.listdir(pathlib.Path(pathlib.Path.cwd(), 'Files', 'Files to combine'))
     write_text_to_file(sort_text(files_list))
 
 def get_text(file_name):
-    with open(file_name, 'r') as read_file:
+    with open(pathlib.Path(pathlib.Path.cwd(), 'Files', 'Files to combine', file_name), 'r') as read_file:
         text = read_file.readlines()
     return text
 
